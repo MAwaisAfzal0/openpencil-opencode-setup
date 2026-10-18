@@ -1,0 +1,11 @@
+{
+  "pid": 12345,
+  "socketPath": null,
+  "httpPort": 7600,
+  "authRequired": false,
+  "authToken": null,
+  "version": "0.16.0",
+  "startedAt": "2026-01-01T00:00:00.000Z",
+  "disabledTools": [],
+  "scope": "document"
+}

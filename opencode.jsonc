@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "mcp": {
+    // OpenPencil: use the official stdio bridge (openpencil-mcp), NOT the
+    // app's HTTP endpoint. The HTTP server speaks Streamable HTTP while
+    // OpenCode's remote client is SSE-based: when the stream drops (app
+    // restart, sleep) it retries twice, gives up, and the server stays
+    // "failed" until OpenCode restarts — even if OpenPencil is running.
+    // The stdio bridge retries the app connection every 2s, forever, and
+    // keeps its MCP session alive across app restarts.
+    "open-pencil": {
+      "type": "local",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\<you>\\AppData\\Roaming\\npm\\node_modules\\@open-pencil\\mcp\\dist\\stdio.mjs"
+      ],
+      "enabled": true
+    }
+  }
+}
